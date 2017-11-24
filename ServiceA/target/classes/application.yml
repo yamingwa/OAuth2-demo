@@ -1,0 +1,18 @@
+server:
+  port: 9091
+  contextPath: /service1
+
+security:
+  oauth2:
+    client:
+      clientId: serviceID1
+      clientSecret: psd1
+      accessTokenUri: http://localhost:9090/AuthServer/oauth/token
+      userAuthorizationUri: http://localhost:9090/AuthServer/oauth/authorize
+    resource:
+      tokenInfoUri: http://localhost:9090/AuthServer/oauth/check_token
+      userInfoUri: http://localhost:9090/AuthServer/user
+      preferTokenInfo: false
+logging:
+  level:
+    org.springframework.security: DEBUG
